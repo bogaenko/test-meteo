@@ -9,7 +9,7 @@ import { PoolService } from '../../services/pool.service';
 let initialState = [] as IPoolState[];
 const poolService = new PoolService();
 
-const todoSlice = createSlice({
+const poolSlice = createSlice({
   name: 'pools',
   initialState,
   reducers: {
@@ -40,8 +40,8 @@ const todoSlice = createSlice({
   },
 });
 
-export const { addPool, runPool } = todoSlice.actions;
-export default todoSlice.reducer;
+export const { addPool, runPool } = poolSlice.actions;
+export default poolSlice.reducer;
 
 export const thunkRunRequests =
   (params: IPoolState): ThunkAction<void, RootState, unknown, AnyAction> =>
