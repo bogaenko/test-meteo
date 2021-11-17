@@ -1,11 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import thunk, { ThunkMiddleware } from 'redux-thunk';
 import { logger } from 'redux-logger';
 import poolReducer from '../reducers/poolReducer';
 
 export const store = configureStore({
   reducer: poolReducer,
-  middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), logger, thunk as ThunkMiddleware]
+  middleware: (getDefaultMiddleware) => [...getDefaultMiddleware(), logger]
 });
 
 export type AppDispatch = typeof store.dispatch;

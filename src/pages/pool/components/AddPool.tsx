@@ -8,7 +8,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { ThunkDispatch } from 'redux-thunk';
 import { AppDispatch } from '../../../redux/store';
 import { addPool, thunkRunRequests } from '../../../redux/reducers/poolReducer';
 import { RouterPathEnum } from '../../../enums/RouterPathEnum';
