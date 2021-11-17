@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 import { ThunkAction } from 'redux-thunk';
 import { AnyAction } from 'redux';
-import { RootState } from "../store";
+import { RootState } from '../store';
 import { IPoolState } from '../states/PoolState';
 import { PoolService } from '../../services/pool.service';
 
