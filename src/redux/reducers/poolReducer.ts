@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { ThunkAction } from 'redux-thunk';
 import { AnyAction } from 'redux';
 import { RootState } from '../store';
-import { IPoolState } from '../states/PoolState';
+import { IPoolState, IPoolStateUpdate } from '../states/PoolState';
 import { PoolService } from '../../services/pool.service';
 
 let initialState = [] as IPoolState[];
@@ -30,7 +30,7 @@ const poolSlice = createSlice({
         } as IPoolState,
       }),
     },
-    runPool(state, action: PayloadAction<IPoolState>) {
+    runPool(state, action: PayloadAction<IPoolStateUpdate>) {
       const pool = state.find((item) => item.id === action.payload.id);
       if (pool) {
         pool.dateRunStarted = action.payload.dateRunStarted;
@@ -65,10 +65,6 @@ export const thunkRunPool =
       
       const params = {
         id,
-        name: pool.name,
-        count: pool.count,
-        isParallel: pool.isParallel,
-        isStartManually: pool.isStartManually,
         dateRunStarted,
         dateRunFinished,
       };
